@@ -17,14 +17,14 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
       - name: Pull Test Model in CI
         run: |
           curl -X POST http://localhost:11434/api/pull -d '{"name": "gemma4:latest"}'
 
       - name: Run SawOne Agentic Red-Team Action
-        uses: hackin2minutes-oss/sawone-agentic-action@v1
+        uses: hackin2minutes-oss/sawone-agentic-action@ba541ccc7f4d2939e1b6ec8c74d3eb5d19931c36 # v1
         with:
           redteam-endpoint: "http://localhost:11434/v1/chat/completions"
           model-name: "gemma4:latest"
@@ -33,7 +33,7 @@ jobs:
 
       - name: Upload Red-Team Audit Report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: redteam-audit-results
           path: promptfoo-redteam.yaml

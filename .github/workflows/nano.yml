@@ -16,10 +16,10 @@ jobs:
 
     steps:
       - name: Checkout Source Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
       - name: Run SawOne Agentic Scanner
-        uses: hackin2minutes-oss/sawone-agentic-action@v1
+        uses: hackin2minutes-oss/sawone-agentic-action@ba541ccc7f4d2939e1b6ec8c74d3eb5d19931c36 # v1
         # zizmor: ignore[unpinned-uses]
         with:
           severity: HIGH,CRITICAL
@@ -28,7 +28,7 @@ jobs:
 
       - name: Upload Security Reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: sawone-agentic-reports
           path: sawone-agentic-reports/

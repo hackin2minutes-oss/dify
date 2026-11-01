@@ -83,7 +83,7 @@ jobs:
           ref: ${{ inputs.cli_ref || github.ref }}
           persist-credentials: false
 
-      - uses: oven-sh/setup-bun@v2
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
         with:
           bun-version: latest
 
@@ -127,7 +127,7 @@ jobs:
           persist-credentials: false
 
       - uses: ./.github/actions/setup-web
-      - uses: oven-sh/setup-bun@v2
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
         with:
           bun-version: latest
       - run: pnpm tree:gen
@@ -172,7 +172,7 @@ jobs:
           persist-credentials: false
 
       - uses: ./.github/actions/setup-web
-      - uses: oven-sh/setup-bun@v2
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
         with:
           bun-version: latest
       - run: pnpm tree:gen
@@ -233,7 +233,7 @@ jobs:
           persist-credentials: false
 
       - uses: ./.github/actions/setup-web
-      - uses: oven-sh/setup-bun@v2
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
         with:
           bun-version: latest
       - run: pnpm tree:gen
@@ -293,7 +293,7 @@ jobs:
           persist-credentials: false
 
       - uses: ./.github/actions/setup-web
-      - uses: oven-sh/setup-bun@v2
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
         with:
           bun-version: latest
       - run: pnpm tree:gen
@@ -347,7 +347,7 @@ jobs:
           persist-credentials: false
 
       - uses: ./.github/actions/setup-web
-      - uses: oven-sh/setup-bun@v2
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
         with:
           bun-version: latest
       - run: pnpm tree:gen

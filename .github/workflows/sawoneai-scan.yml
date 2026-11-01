@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  security-events: write
 
 jobs:
   scan:
@@ -25,6 +26,13 @@ jobs:
 
       - name: Scan dify
         run: python -m sawoneai scan . --format sarif --output sawoneai.sarif
+
+      - name: Upload findings to the Security tab
+        if: always()
+        uses: github/codeql-action/upload-sarif@4bfa242aa49c5f7c6770b98670d354a7dfac05f8 # v3
+        with:
+          sarif_file: sawoneai.sarif
+          category: sawoneai
 
       - name: Upload the report
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4

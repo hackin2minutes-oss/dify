@@ -3,7 +3,7 @@ name: SawoneAI scan
 on:
   workflow_dispatch:
   push:
-    branches: [sawoneai-scan]
+    branches: [sawoneai-scan-run]
 
 permissions:
   contents: read
